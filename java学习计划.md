@@ -1,0 +1,20 @@
+###java学习计划
+* 1、javaSE
+    * 基本数据类型、BigDecimal、运算符
+    * String类、StringBuilder和StringBuffer区别
+    * 流程控制、数组
+    * 面向对象
+    * 异常处理、泛型、集合(包括源码分析)
+    * IO、反射
+    * JDBC
+* 2、java8特性
+    * stream流
+    * Guava、commons-lang3
+* 3、项目：数据库结构的同步
+* 4、中间件、框架学习
+    * spring、springMvc、springAop、springIoc、springBoot
+    * Dubbo、Kafka、Redis、MQ
+* 5、项目：接口自动化测试平台
+* 6、项目：性能自动化测试平台（jmeter二次开发）
+* 7、字节码、算法。。。。。。
+* 8、面试
