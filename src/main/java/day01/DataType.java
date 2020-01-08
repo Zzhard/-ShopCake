@@ -5,6 +5,7 @@ package day01;
 import org.testng.annotations.Test;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 /**
  * 基本数据类型测试
@@ -52,5 +53,30 @@ public class DataType {
         BigDecimal c = new BigDecimal("1");
         BigDecimal d = new BigDecimal("0.99");
         System.out.println(c.subtract(d));
+    }
+
+    /**
+     * 3、不同数据类型的转换：byte→short(char)→int→long→float→double
+     */
+    public void tranForm(){
+        //case1 short+ byte,会直接使用int来接收
+        short i1=1;
+        byte i2=2;
+        int i = i1 + i2;
+        //case2,如果是用大范围的类型做为接收对象
+        byte i3=31;
+        int i4=12313;
+        int i5 = i3 + i4;
+    }
+    /**
+     * 4、自动拆箱和装箱.int和
+     */
+    public void autoBox(){
+        int i=3;
+        //装箱
+        Integer i1=i;
+        //拆箱
+        int i2=i1;
+        ArrayList list=new ArrayList();
     }
 }
