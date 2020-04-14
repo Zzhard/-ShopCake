@@ -6,10 +6,9 @@ package day02.homewok;
  * @date 2020/4/12 2:50 下午
  */
 
-import com.google.common.base.Strings;
 import javafx.util.Pair;
+import org.testng.util.Strings;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import static java.lang.Integer.valueOf;
