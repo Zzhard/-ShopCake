@@ -21,7 +21,7 @@ import java.util.*;
  *
  * - 要求3: 按照分数(score)范围分组, 比如 60-70, 有一组人, 70-80有一组人
  *
- * - 要求4: 基于分数排序, 由高到低
+ * - 要求4: 对分数排序, 由高到低,
  *
  * - 要求5: 基于性别分组,求男同学的平均分,求女同学的平均分
  *
@@ -32,14 +32,19 @@ public class Topic10 {
 
     public static void main(String[] args) {
         List<User> list = new ArrayList<>();
-        list.add(new User().of("小明",20,80,"男"));
-        list.add(new User().of("小红",20,70,"男"));
-        list.add(new User().of("小黑",23,60,"男"));
-        list.add(new User().of("小白",40,80,"男"));
-        list.add(new User().of("小蓝",40,60,"男"));
-        groupByage(list);
-//        printOut(list);
-        groupByscore(list);
+        list.add(new User().of(1,"小明",20,65,"男"));
+        list.add(new User().of(2,"小红",20,70,"男"));
+        list.add(new User().of(3,"小黑",23,70,"女"));
+        list.add(new User().of(4,"小白",40,85,"男"));
+        list.add(new User().of(5,"小蓝",40,60,"女"));
+//        groupByage(list);
+////        printOut(list);
+//        groupByscore(list);
+//        List<User> users = sortScore(list);
+//        printOut(users);
+        Map<String, List<User>> map = groupByGender(list);
+        avgSore(map);
+
     }
     //1、遍历List,打印list中元素
     public static void printOut(List<User> list){
@@ -111,26 +116,75 @@ public class Topic10 {
     }
 
     //4、基于分数进行排序，由高到低
+    public static List<User> sortScore(List<User> users){
+        for (int i=0;i<users.size();i++){
+            for (int j=0;j<i;j++){
+                User u1 = users.get(i);
+                User u2 = users.get(j);
+                if(u1.getScore()>u2.getScore()){
+                    users.set(i,u2);
+                    users.set(j,u1);
+                }
 
-    public static void sortByscore(List<User> list){
-        List<User> userList=new ArrayList<>();
-        List<Integer> scores=new ArrayList<>();
-        Map<Integer,List<User>> map=new HashMap<>();
-        for (User user : list) {
-            int score = user.getScore();
-            scores.add(score);
-            if(map.containsKey(score)){
-                map.get(score).add(user);
-            }else {
-                List<User> users=new ArrayList<>();
-                users.add(user);
-                map.put(score,users);
             }
-            }
-
-
-
+        }
+        return users;
     }
+
+
+    //根据姓名进行分组
+    public static Map<String,List<User>> groupByName(List<User> users){
+        Map<String,List<User>> map=new HashMap<>();
+        for (User user : users) {
+            String name = user.getName();
+            if(map.containsKey(name)){
+                map.get(name).add(user);
+            }else {
+                List<User> userList=new ArrayList<>();
+                userList.add(user);
+                map.put(name,userList);
+            }
+        }
+
+
+
+        return map;
+    }
+
+    //根据性别进行分组，
+    public static Map<String,List<User>> groupByGender(List<User> users){
+        Map<String,List<User>> map=new HashMap<>();
+        for (User user : users) {
+            String gender = user.getGender();
+            if(map.containsKey(gender)){
+                map.get(gender).add(user);
+            }else {
+                List<User> list=new ArrayList<>();
+                list.add(user);
+                map.put(gender,list);
+            }
+        }
+        return map;
+    }
+    //基于性别分组，求男女组的平均分数
+    public static void avgSore(Map<String,List<User>> map){
+        Map<String,Integer> newMap=new HashMap<>();
+        for (Map.Entry<String, List<User>> entry : map.entrySet()) {
+            String key = entry.getKey();
+            List<User> users = entry.getValue();
+            int scores=0;
+            for (User user : users) {
+                int score = user.getScore();
+                scores+=score;
+            }
+            int avg=scores/users.size();
+            newMap.put(key,avg);
+        }
+
+        System.out.println(newMap);
+    }
+
+
 
 
 }

@@ -18,20 +18,22 @@ import lombok.ToString;
 @Setter
 @Builder
 public class User {
+    private Integer id;
     private String name;
-    private int age;
-    private int score;
+    private Integer age;
+    private Integer score;
     private String gender;
 
-    public User of(String name,int age,int score,String gender){
-       return new User(name,age,score,gender);
+    public User of(Integer id,String name,Integer age,Integer score,String gender){
+       return new User(id,name,age,score,gender);
     }
 
-    public User(String name, int age, int score, String gender) {
+    public User(Integer id,String name, Integer age, Integer score, String gender) {
         this.name = name;
         this.age = age;
         this.score = score;
         this.gender = gender;
+        this.id=id;
     }
     public User(){
 
