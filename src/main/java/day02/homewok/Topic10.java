@@ -112,7 +112,7 @@ public class Topic10 {
 
     //4、基于分数进行排序，由高到低
 
-    public static void sortByscore(List<User> list){
+    public static List<User>  sortByscore(List<User> list){
         List<User> userList=new ArrayList<>();
         List<Integer> scores=new ArrayList<>();
         Map<Integer,List<User>> map=new HashMap<>();
@@ -127,6 +127,15 @@ public class Topic10 {
                 map.put(score,users);
             }
             }
+        for(Map.Entry<Integer,List<User>> entry:map.entrySet()){
+            entry.getKey();
+            for (int i = 0; i <map.size() ; i++) {
+                for (int j=0;j<i;j++){
+
+                }
+            }
+
+        }
 
 
 
