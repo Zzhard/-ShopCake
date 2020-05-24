@@ -8,7 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ShopCake" />
-        <module name="-ShopCake" />
+        <module name="LeetCode" />
+        <module name="basic" />
+        <module name="java8" />
       </profile>
     </annotationProcessing>
   </component>
