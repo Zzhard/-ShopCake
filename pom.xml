@@ -23,6 +23,7 @@
         <module>java8</module>
         <module>basic</module>
         <module>LeetCode</module>
+        <module>patterns</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->

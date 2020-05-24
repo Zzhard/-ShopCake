@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ShopCake" />
         <module name="LeetCode" />
+        <module name="patterns" />
         <module name="basic" />
         <module name="java8" />
       </profile>
