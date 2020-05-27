@@ -9,9 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ShopCake" />
         <module name="LeetCode" />
-        <module name="patterns" />
-        <module name="basic" />
         <module name="java8" />
+        <module name="basic" />
+        <module name="patterns" />
       </profile>
     </annotationProcessing>
   </component>
