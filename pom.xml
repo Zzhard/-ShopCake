@@ -24,6 +24,7 @@
         <module>basic</module>
         <module>LeetCode</module>
         <module>patterns</module>
+        <module>springboot</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
